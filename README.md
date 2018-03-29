@@ -220,7 +220,7 @@ sudo sed -i "s|Exec=|Exec=env MOZ_USE_XINPUT2=1 |g" /usr/share/applications/fire
 To undo this change, use:
 
 ```
-sudo sed -i "s|Exec=env MOZ_USE_XINPUT2=1 |Exec=|g" /usr/share/applications/firefox.de
+sudo sed -i "s|Exec=env MOZ_USE_XINPUT2=1 |Exec=|g" /usr/share/applications/firefox.desktop
 ```
 Stackoverflow: https://askubuntu.com/questions/978226/how-to-make-touch-screen-scrolling-work-in-firefox-quantum
 
