@@ -39,13 +39,14 @@ See [.zshrc](.zshrc)
 
 ### Terminal Color Scheme
 Github: https://github.com/Mayccoll/Gogh
-Theme `aco`: `$ wget -O xt  http://git.io/v3Dll && chmod +x xt && ./xt && rm xt`
+
+Theme `aco` : ` wget -O xt  http://git.io/v3Dll && chmod +x xt && ./xt && rm xt`
 
 Screenshots:
 
 ![](https://i.imgur.com/n7Jhq33.png)
 
-![](https://i.imgur.com/g159Qkr.png)
+![](https://i.imgur.com/GCkE3ek.png)
 
 
 
@@ -171,6 +172,34 @@ Relative post: [XPS 9560 - setting up multitouch gestures with Ubuntu 16.04](htt
 ### Enable long press screen right clicking
 Go to `Settings` > `Universal Access` > `Pointing & Clicking` and enable `Simulated Secondary Click`
 
+## Audio
+### Disable white noise with headphones
+If there is an annoying whie noise in the background when plugged in headphone, the follow steps should fix it.
+
+
+Set Headphone Mic Boost gain to 10dB. Any other value seems to cause the irritating background noise in headphones. This can be done with amixer:
+```
+amixer -c0 sset 'Headphone Mic Boost' 10dB
+```
+To make this happen automatically every time you headphones are connected install `acpid`.
+
+Start it by running: `sudo systemctl start acpid.service`
+
+Enable it by running: `sudo systemctl enable acpid.service`
+
+Create following event script `/etc/acpi/headphone-plug`
+```
+event=jack/headphone HEADPHONE plug
+action=/etc/acpi/cancel-white-noise.sh %e
+```
+Then create action script `/etc/acpi/cancel-white-noise.sh`:
+```
+#! /bin/bash
+amixer -c0 sset 'Headphone Mic Boost' 10dB
+```
+Now Headphone Mic Boost will be set to 10dB every time headphones are connected. To make this effective you need to restart your laptop.
+
+[Stackoverflow](https://unix.stackexchange.com/questions/336790/how-to-disable-white-noise-with-headphones-in-dell-xps/336834)
 
 ## Applications
 ### Firefox
@@ -211,6 +240,9 @@ sudo apt-get update
 sudo apt-get install spotify-client
 ```
 #### Fix high resolution display issue
+Issue screenshot:
+![](https://i.imgur.com/BJ7Tk6m.png)
+
 You could edit `/usr/share/applications/spotify.desktop` and change the line with Exec= to:
 ```
 Exec=spotify --force-device-scale-factor=1.8 %U
@@ -250,11 +282,4 @@ sudo apt-get update
 sudo apt-get install tlp tlp-rdw
 ```
 Docs: http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html
-
-
-
-
-
-
-
 

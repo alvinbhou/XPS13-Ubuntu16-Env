@@ -98,3 +98,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias python='/usr/local/bin/python3'
+alias nh='nautilus . &>/dev/null'
+alias ptt='ssh bbsu@ptt.cc'
+
+# source
+source /etc/zsh_command_not_found
