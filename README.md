@@ -187,7 +187,7 @@ Start it by running: `sudo systemctl start acpid.service`
 
 Enable it by running: `sudo systemctl enable acpid.service`
 
-Create following event script `/etc/acpi/headphone-plug`
+Create following event script `/etc/acpi/event/headphone-plug`
 ```
 event=jack/headphone HEADPHONE plug
 action=/etc/acpi/cancel-white-noise.sh %e
