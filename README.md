@@ -154,7 +154,7 @@ Start it by running: `sudo systemctl start acpid.service`
 
 Enable it by running: `sudo systemctl enable acpid.service`
 
-Create following event script `/etc/acpi/headphone-plug`
+Create following event script `/etc/acpi/event/headphone-plug`
 ```
 event=jack/headphone HEADPHONE plug
 action=/etc/acpi/cancel-white-noise.sh %e
@@ -225,7 +225,7 @@ sudo sed -i "s|Exec=|Exec=env MOZ_USE_XINPUT2=1 |g" /usr/share/applications/fire
 To undo this change, use:
 
 ```
-sudo sed -i "s|Exec=env MOZ_USE_XINPUT2=1 |Exec=|g" /usr/share/applications/firefox.de
+sudo sed -i "s|Exec=env MOZ_USE_XINPUT2=1 |Exec=|g" /usr/share/applications/firefox.desktop
 ```
 Stackoverflow: https://askubuntu.com/questions/978226/how-to-make-touch-screen-scrolling-work-in-firefox-quantum
 
