@@ -98,8 +98,45 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias python='/usr/local/bin/python3'
-alias nh='nautilus . &>/dev/null'
+alias middle='synclient TapButton3=2'
+alias nh='nautilus &>/dev/null'
 alias ptt='ssh bbsu@ptt.cc'
 
-# source
+# source command_not_found
 source /etc/zsh_command_not_found
+
+# path
+export PATH=$PATH:~/bin
+
+# spaceship settings
+SPACESHIP_PROMPT_ORDER=(
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  package       # Package version
+  node          # Node.js section
+  golang        # Go section
+  docker        # Docker section
+  aws           # Amazon Web Services section
+  venv          # virtualenv section
+  conda         # conda virtualenv section
+  pyenv         # Pyenv section
+  exec_time     # Execution time
+  line_sep      # Line break
+  vi_mode       # Vi-mode indicator
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
+
+SPACESHIP_RPROMPT_ORDER=(
+  battery       # Battery level and status
+  time          # Time stampts section
+)
+
+SPACESHIP_TIME_SHOW=true
+SPACESHIP_GIT_BRANCH_COLOR=221
+SPACESHIP_GIT_STATUS_COLOR=215
+SPACESHIP_PACKAGE_COLOR=197
+SPACESHIP_BATTERY_THRESHOLD=10

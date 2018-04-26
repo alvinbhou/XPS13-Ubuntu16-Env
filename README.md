@@ -55,43 +55,10 @@ Screenshots:
 sudo ln -s /usr/share/applications/guake.desktop /etc/xdg/autostart/
 ```
 
-## Unity Themes & Icon Packs
-### Unity Tweak Tool
-#### Install
-```
-sudo apt-get install unity-tweak-tool gnome-tweak-tool
-```
-#### Settings 
-Lots of settings, you can change the `theme` and `icons`, setup hot-corners and workspace.
-To remove the workspace icon on the unity launcer, do the following
-* Install dconf-editor `sudo apt install dconf-editor`
-* Then open `com` -> `canonical` -> `unity` -> `launcher` and click on `favorites`
-* In the field `Custom value` remove `'unity://expo-icon',` and click `Apply`
-
-
-### Arc theme
-#### Install
-```
-sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/arc-theme.list"
-sudo apt-get update && sudo apt-get install arc-theme
-```
-Github: https://github.com/horst3180/arc-theme
-
-Tutorial: [How to Install Arc GTK Theme on Ubuntu](https://www.omgubuntu.co.uk/2016/06/install-latest-arc-gtk-theme-ubuntu-16-04)
-
-### ultra-flat-icons
-#### Install
-```
-sudo add-apt-repository ppa:noobslab/icons
-sudo apt-get update
-sudo apt-get install ultra-flat-icons
-```
-Github: https://github.com/anmoljagetia/Flatabulous
 
 ## Touchpad
 
 I choose to use `synaptics` + [fusuma](https://github.com/iberianpig/fusuma)
-
 
 
 ### Fusuma
@@ -200,6 +167,44 @@ amixer -c0 sset 'Headphone Mic Boost' 10dB
 Now Headphone Mic Boost will be set to 10dB every time headphones are connected. To make this effective you need to restart your laptop.
 
 [Stackoverflow](https://unix.stackexchange.com/questions/336790/how-to-disable-white-noise-with-headphones-in-dell-xps/336834)
+
+## Unity Themes & Icon Packs
+### Unity Tweak Tool
+#### Install
+```
+sudo apt-get install unity-tweak-tool gnome-tweak-tool
+```
+#### Settings 
+Lots of settings, you can change the `theme` and `icons`, setup hot-corners and workspace.
+To remove the workspace icon on the unity launcer, do the following
+* Install dconf-editor `sudo apt install dconf-editor`
+* Then open `com` -> `canonical` -> `unity` -> `launcher` and click on `favorites`
+* In the field `Custom value` remove `'unity://expo-icon',` and click `Apply`
+
+
+### Arc theme
+#### Install
+```
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/arc-theme.list"
+sudo apt-get update && sudo apt-get install arc-theme
+```
+Github: https://github.com/horst3180/arc-theme
+
+Tutorial: [How to Install Arc GTK Theme on Ubuntu](https://www.omgubuntu.co.uk/2016/06/install-latest-arc-gtk-theme-ubuntu-16-04)
+
+### paper-gtk-theme & icons
+#### Install
+```
+sudo add-apt-repository ppa:snwh/pulp
+sudo apt-get update
+sudo apt-get install paper-icon-theme
+sudo apt-get install paper-cursor-theme
+sudo apt-get install paper-gtk-theme
+```
+Github: https://github.com/snwh/paper-gtk-theme
+
+https://snwh.org/paper
+
 
 ## Applications
 ### Firefox
