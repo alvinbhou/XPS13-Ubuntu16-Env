@@ -46,7 +46,8 @@ Screenshots:
 
 ![](https://i.imgur.com/n7Jhq33.png)
 
-![](https://i.imgur.com/GCkE3ek.png)
+![](https://i.imgur.com/LlPEHzb.png)
+
 
 
 
@@ -167,6 +168,13 @@ amixer -c0 sset 'Headphone Mic Boost' 10dB
 Now Headphone Mic Boost will be set to 10dB every time headphones are connected. To make this effective you need to restart your laptop.
 
 [Stackoverflow](https://unix.stackexchange.com/questions/336790/how-to-disable-white-noise-with-headphones-in-dell-xps/336834)
+
+### Fix headphone noise (coil whine) after suspend
+
+This problem is patched in kernel 4.14.15, update the kernel will fix this annoying issue.
+
+Relative post: [Headphone noise in Dell XPS 13 (9360, late 2017, intel 8th gen)
+](https://bbs.archlinux.org/viewtopic.php?id=232708)
 
 ## Unity Themes & Icon Packs
 ### Unity Tweak Tool
