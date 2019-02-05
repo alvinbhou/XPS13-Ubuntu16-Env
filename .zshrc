@@ -1,3 +1,4 @@
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -7,7 +8,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
+POWERLEVEL9K_MODE='nerdfont-complete'
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -98,18 +100,28 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias python='/usr/local/bin/python3'
+alias windows='cd /mnt/alvin/Windows/Users/alvin/Projects'
 alias middle='synclient TapButton3=2'
+alias whitenoise="amixer -c0 sset 'Headphone Mic Boost' 10dB"
 alias nh='nautilus &>/dev/null'
 alias ptt='ssh bbsu@ptt.cc'
+alias googledrive='cd /mnt/alvin/Windows/Users/alvin/Google\ Drive'
+alias fftouch='sudo sed -i "s|Exec=|Exec=env MOZ_USE_XINPUT2=1 |g" /usr/share/applications/firefox.desktop'
+alias dlsize='du -sch * | sort -rh'
+alias dsize='du -sh'
 
 # source command_not_found
 source /etc/zsh_command_not_found
 
 # path
 export PATH=$PATH:~/bin
+export PATH=/usr/local/texlive/2018/bin/x86_64-linux:$PATH    
+export INFOPATH=$INFOPATH:/usr/local/texlive/2018/texmf-dist/doc/info
+export MANPATH=$MANPATH:/usr/local/texlive/2018/texmf-dist/doc/man
+
 
 # spaceship settings
-SPACESHIP_PROMPT_ORDER=(
+ SPACESHIP_PROMPT_ORDER=(
   user          # Username section
   dir           # Current directory section
   host          # Hostname section
@@ -135,8 +147,17 @@ SPACESHIP_RPROMPT_ORDER=(
   time          # Time stampts section
 )
 
-SPACESHIP_TIME_SHOW=true
+SPACESHIP_TIME_SHOW=false
 SPACESHIP_GIT_BRANCH_COLOR=221
 SPACESHIP_GIT_STATUS_COLOR=215
 SPACESHIP_PACKAGE_COLOR=197
 SPACESHIP_BATTERY_THRESHOLD=10
+
+# POWERLEVEL SETTINGS
+POWERLEVEL9K_MODE='nerdfont-complete'
+# 左側
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable vcs)
+
+# 右側
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status ram time)
+NODE_VIRTUAL_ENV_DISABLE_PROMPT=0
