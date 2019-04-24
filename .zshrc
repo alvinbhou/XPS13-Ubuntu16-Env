@@ -66,6 +66,7 @@ plugins=([
    history-substring-search
    autojump
    zsh-syntax-highlighting
+   virtualenv
  ] 
 )
 
@@ -99,13 +100,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias python='/usr/local/bin/python3'
-alias windows='cd /mnt/alvin/Windows/Users/alvin/Projects'
+alias python='python3'
+alias windows='cd /mnt/Windows/Users/alvin/Projects'
 alias middle='synclient TapButton3=2'
 alias whitenoise="amixer -c0 sset 'Headphone Mic Boost' 10dB"
-alias nh='nautilus &>/dev/null'
+alias gopen='gnome-open'
 alias ptt='ssh bbsu@ptt.cc'
-alias googledrive='cd /mnt/alvin/Windows/Users/alvin/Google\ Drive'
+alias googledrive='cd /mnt/Windows/Users/alvin/Google\ Drive'
 alias fftouch='sudo sed -i "s|Exec=|Exec=env MOZ_USE_XINPUT2=1 |g" /usr/share/applications/firefox.desktop'
 alias dlsize='du -sch * | sort -rh'
 alias dsize='du -sh'
@@ -119,6 +120,10 @@ export PATH=/usr/local/texlive/2018/bin/x86_64-linux:$PATH
 export INFOPATH=$INFOPATH:/usr/local/texlive/2018/texmf-dist/doc/info
 export MANPATH=$MANPATH:/usr/local/texlive/2018/texmf-dist/doc/man
 
+# virtualenvwrapper
+export WORKON_HOME=~/.virutalenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+source /usr/local/bin/virtualenvwrapper.sh
 
 # spaceship settings
  SPACESHIP_PROMPT_ORDER=(
@@ -155,9 +160,9 @@ SPACESHIP_BATTERY_THRESHOLD=10
 
 # POWERLEVEL SETTINGS
 POWERLEVEL9K_MODE='nerdfont-complete'
-# 左側
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable vcs)
+# left partition
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable virtualenv vcs)
 
-# 右側
+# right partition
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status ram time)
 NODE_VIRTUAL_ENV_DISABLE_PROMPT=0
